@@ -26,6 +26,7 @@ gem 'rocket_pants', '~> 1.9.2'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
+gem 'bootstrap-sass-extras'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
