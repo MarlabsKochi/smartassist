@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyString
+  major_number: MyString
+  minor_number: MyString
+  service_point_name: MyString
+  major_number: MyString
+
+two:
+  uuid: MyString
+  major_number: MyString
+  minor_number: MyString
+  service_point_name: MyString
+  major_number: MyString
