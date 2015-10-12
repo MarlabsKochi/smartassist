@@ -1,4 +1,5 @@
 class BeaconsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_beacon, only: [:show, :edit, :update, :destroy]
 
   # GET /beacons
