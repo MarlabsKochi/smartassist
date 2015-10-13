@@ -4,7 +4,7 @@ class Api::V1::BaseController < RocketPants::Base
   before_filter :require_authentication!
 
   def current_user
-  	@current_user
+    @current_user
   end
 
   def require_authentication!
