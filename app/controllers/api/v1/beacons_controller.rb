@@ -3,7 +3,8 @@ class Api::V1::BeaconsController < Api::V1::BaseController
     beacon_details = Beacon.find_by_uuid(params["beacon"]["uuid"])
       if beacon_details 
         expose({
-      	  context: beacon_details.service_point_name
+      	  context: beacon_details.service_point_name,
+      	  message: beacon_details.message
         })
       else
       	error! :not_found
