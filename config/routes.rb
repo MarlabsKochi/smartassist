@@ -18,11 +18,11 @@ Rails.application.routes.draw do
   namespace :api do
     api version: 1, module: 'v1' do
       resources :sessions, only: [:create]
-      resources :beacons, only: [] do
-        get 'beacon_details', on: :member
-      end
+      resources :beacons, only: [] 
     end
   end
+
+  get 'beacons/:uuid' => 'beacons#beacon_details'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
