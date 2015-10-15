@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+######user_statuses table
+if ActiveRecord::Base.connection.table_exists? 'user_statuses'
+  ActiveRecord::Base.connection.execute 'ALTER SEQUENCE user_statuses_id_seq RESTART WITH 1;'
+  [{id: 1, name: "ArrivingAtEntrance"}, {id: 2, name: "ArrivedAtReception"}, 
+   {id: 3, name: "AppointmentRequested"}, {id: 4, name: "AppointmentFixed"}, 
+   {id: 5, name: "ConsultingDoctor"}, {id: 6, name: "Closed"}].each do |data|
+    UserStatus.create(data)
+  end
+end  
+######user_statuses table
