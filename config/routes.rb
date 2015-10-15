@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'beacons/:uuid' => 'beacons#beacon_details'
+  get 'beacon_details' => 'beacons#beacon_details'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
