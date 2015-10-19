@@ -54,8 +54,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Beacon Config", beacons_url %></li>
-            <li><%= link_to "Patients near by", patients_near_by_entrance_reception_url %></li>
+            <li>
+              <%if can? :manage, Beacon%>
+                <%= link_to "Beacon Config", beacons_url %>
+              <%end%>
+            </li>
+            <li>
+              <%if can?(:manage, :reception) %>
+                <%= link_to "Patients near by", patients_near_by_entrance_reception_url %>
+              <%end%>
+            </li>
             <li class="active"><%= link_to "Sign Out",  destroy_user_session_path, :method => :delete %></li>
           </ul>
         </div><!-- /.navbar-collapse -->

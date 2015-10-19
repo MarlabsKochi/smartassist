@@ -14,5 +14,25 @@ class User < ActiveRecord::Base
       self.authentication_token = SecureRandom.base64(64)
       break unless User.find_by(authentication_token: authentication_token)
      end
-   end
+  end
+
+  def admin?
+    role.name == 'admin'
+  end
+
+  def receptionist?
+    role.name == 'receptionist'
+  end
+
+  def nurse?
+    role.name == 'nurse'
+  end
+
+  def doctor?
+    role.name == 'doctor'
+  end
+
+  def patient?
+    false
+  end
 end
