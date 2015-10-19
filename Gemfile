@@ -29,6 +29,12 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass-extras'
 gem 'websocket-rails'
 
+#Authorization
+gem 'cancancan', '~> 1.10'
+
+#Authorization
+gem 'cancancan', '~> 1.10'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :appointments
+  belongs_to :role
 
   before_create :generate_authentication_token
 
