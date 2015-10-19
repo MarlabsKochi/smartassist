@@ -17,19 +17,19 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    role.name == 'admin'
+    role.try(:name) == 'admin'
   end
 
   def receptionist?
-    role.name == 'receptionist'
+    role.try(:name) == 'receptionist'
   end
 
   def nurse?
-    role.name == 'nurse'
+    role.try(:name) == 'nurse'
   end
 
   def doctor?
-    role.name == 'doctor'
+    role.try(:name) == 'doctor'
   end
 
   def patient?
