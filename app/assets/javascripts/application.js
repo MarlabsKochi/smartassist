@@ -15,3 +15,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require websocket_rails/main
+
+var dispatcher = new WebSocketRails('192.168.63.68:3000/websocket');
+channel = dispatcher.subscribe('reception');
+channel.bind('new', function(patient) {
+  console.log('a new order about '+patient+' arrived!');
+  $(".order-body").append("<tr><td>" +  patient.first_name+ "</td><td> " +  "04929-324234" + "</td></tr>");
+})
+

@@ -4,7 +4,7 @@ class Beacon < ActiveRecord::Base
   def status_name
     case service_point_name
       when 'Entrance'
-        UserStatus.entrance_status.name
+        UserStatus.entrance_status
     end
   end
 

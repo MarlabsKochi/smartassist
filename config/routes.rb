@@ -19,10 +19,13 @@ Rails.application.routes.draw do
     api version: 1, module: 'v1' do
       resources :sessions, only: [:create]
       resources :beacons, only: [] 
+      get 'beacon_details' => 'beacons#beacon_details'
     end
   end
 
-  get 'beacon_details' => 'beacons#beacon_details'
+
+
+get 'home/patient_near_by' => 'home#patient_near_by', as: :patients
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
