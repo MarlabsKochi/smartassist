@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/thinkphp/dijkstra.gem.git
+  revision: d5ba25ac349ba26f782b3c894ff6c848eac491b4
+  specs:
+    dijkstra (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -212,6 +218,7 @@ DEPENDENCIES
   cancancan (~> 1.10)
   coffee-rails (~> 4.1.0)
   devise
+  dijkstra!
   jbuilder (~> 2.0)
   jquery-rails
   pg

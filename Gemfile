@@ -32,6 +32,9 @@ gem 'websocket-rails'
 #Authorization
 gem 'cancancan', '~> 1.10'
 
+#shortest path algorithm
+gem 'dijkstra', github: 'thinkphp/dijkstra.gem'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
