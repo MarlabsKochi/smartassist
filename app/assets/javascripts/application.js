@@ -14,8 +14,11 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+// require jquery.metisMenu
+//= require_folder js
 //= require websocket_rails/main
+//= require_tree .
+
 
 var dispatcher = new WebSocketRails('192.168.63.68:3000/websocket');
 channel = dispatcher.subscribe('reception');

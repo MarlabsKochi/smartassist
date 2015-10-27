@@ -22,6 +22,5 @@ class Api::V1::BaseController < RocketPants::Base
       end
     end
     @current_user = user
-    p @current_user
   end
 end
