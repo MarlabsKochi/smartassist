@@ -13,11 +13,11 @@ class Api::V1::PathsController < Api::V1::BaseController
 	]
 	  map ={"one"=>["-0.29","-2.09"],"two"=>["2.29","-1.09"],"three"=>["1.83","0.41"],"four"=>["-0.1","1.80"],"five"=>["-1.65","0.45"]}
 
-       co_ordinates = {"one" => [["-1.29","-2.09"],["0.71","-2.09"]] , 
-       	"two" =>[["1.29","-1.09"],["3.29","-1.09"]],
-          "three"=> [["0.83","0.41"],["2.83","0.41"]],
-           "four" => [["-1.1","1.80"],["1.1","1.80"]],
-           "five" => [["-2.65","0.45"],["0.65","0.45"]]
+       co_ordinates = {"one" => [[-1.29,-2.09],[0.71,-2.09]] , 
+       	"two" =>[[1.29,-1.09],[3.29,-1.09]],
+          "three"=> [[0.83,0.41],[2.83,0.41]],
+           "four" => [[-1.1,1.80],[1.1,1.80]],
+           "five" => [[-2.65,0.45],[0.65,0.45]]
       }
 
       copy ={"one"=>["x"=>"-0.29","y"=>"-2.09"],"two"=>["x"=>"2.29","y"=>"-1.09"],"three"=>["x"=>"1.83","y"=>"0.41"],"four"=>["x"=>"-0.1","y"=>"1.80"],"five"=>["x"=>"-1.65","y"=>"0.45"]}
@@ -29,8 +29,11 @@ class Api::V1::PathsController < Api::V1::BaseController
 	  end_point = map.key(end_point)
 
     paths_stored.each do |path|
-       p first_point = co_ordinates[path[0]]
-       p second_point = co_ordinates[path[1]]
+        first_point = co_ordinates[path[0]]
+        second_point = co_ordinates[path[1]]
+       p = []
+       p << first_point
+       p first_point
     end
 
      #    if start_point
