@@ -33,12 +33,13 @@ class Api::V1::PathsController < Api::V1::BaseController
 	  start_point = params[:start_point].split(",")
 	  end_point = params[:end_point].split(",") 
 	  start_point = map.key(start_point)
+          starts = start_point
 	  end_point = map.key(end_point)
-    starts = ""
+    #starts = ""
     unless start_point          
       paths_stored.each do |path|
-      start_point = path[0]
-      se = path[1]
+      start_point = params[:start_point].split(",")
+      starts = path[0]
       first_point = co_ordinates[path[0]]
       second_point = co_ordinates[path[1]]
       one_one= first_point.first.first
@@ -58,14 +59,13 @@ class Api::V1::PathsController < Api::V1::BaseController
       a = Polygon.new(p)
        status = a.isInside(target)
        p start_point
-       p se
        p status
       break if status==1
 
     end
   end
         
-  	     ob = Dijkstra.new(start_point,end_point, paths_stored)
+  	     ob = Dijkstra.new(starts,end_point, paths_stored)
   	     paths = []
            ob.shortest_path.each {|a| paths<< copy[a]}
   	     response ={
