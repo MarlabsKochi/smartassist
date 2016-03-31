@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Floor Maps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @floor_maps.each do |floor_map| %>
+      <tr>
+        <td><%= floor_map.name %></td>
+        <td><%= link_to 'Show', floor_map %></td>
+        <td><%= link_to 'Edit', edit_floor_map_path(floor_map) %></td>
+        <td><%= link_to 'Destroy', floor_map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Floor map', new_floor_map_path %>

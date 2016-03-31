@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :floor_maps
   resources :beacons
   get 'home/index'
 
@@ -20,6 +21,11 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create]
       resources :beacons, only: [] 
       get 'beacon_details' => 'beacons#beacon_details'
+      get 'paths' => 'paths#dummy'
+      get 'testing' => 'paths#dummys'
+      get 'get_shortest_path' => 'checks#get_shortest_path'
+      get 'initialize_floor_map' => 'checks#initialize_floor_map'
+      get 'find_nearest_node' => 'paths#find_nearest_node'
     end
   end
 

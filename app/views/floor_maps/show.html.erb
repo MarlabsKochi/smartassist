@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= image_tag(@floor_map.name, :width => 600) if @floor_map.name.present? %>
+</p>
+
+<%= link_to 'Edit', edit_floor_map_path(@floor_map) %> |
+<%= link_to 'Back', floor_maps_path %>

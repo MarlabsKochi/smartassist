@@ -1,0 +1,22 @@
+
+<%= form_for @floor_map, :html => {:multipart => true} do |f| %>
+  <% if @floor_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@floor_map.errors.count, "error") %> prohibited this floor_map from being saved:</h2>
+
+      <ul>
+      <% @floor_map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+<%= f.file_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

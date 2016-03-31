@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016090650) do
+ActiveRecord::Schema.define(version: 20160322151258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,29 @@ ActiveRecord::Schema.define(version: 20151016090650) do
     t.string   "message"
   end
 
+  create_table "floor_maps", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "models", force: :cascade do |t|
+    t.string   "FloorMap"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "paths", force: :cascade do |t|
+    t.jsonb    "nearest_points", default: {}
+    t.jsonb    "map",            default: {}
+    t.jsonb    "co_ordinates",   default: {}
+    t.jsonb    "copy",           default: {}
+    t.text     "map_stored"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -60,6 +83,7 @@ ActiveRecord::Schema.define(version: 20151016090650) do
     t.string   "first_name",             default: "", null: false
     t.string   "last_name",              default: "", null: false
     t.string   "phone_number",           default: ""
+    t.integer  "role_id",                             null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

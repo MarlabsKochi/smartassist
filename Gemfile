@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'carrierwave'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -33,7 +33,7 @@ gem 'websocket-rails'
 gem 'cancancan', '~> 1.10'
 
 #shortest path algorithm
-gem 'dijkstra', github: 'thinkphp/dijkstra.gem'
+#gem 'dijkstra', github: 'thinkphp/dijkstra.gem'
 
 
 # Use ActiveModel has_secure_password
@@ -57,6 +57,6 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  #gem 'spring'
 end
 
