@@ -28,7 +28,7 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass-extras'
 gem 'websocket-rails'
-
+gem 'alertify-rails'
 #Authorization
 gem 'cancancan', '~> 1.10'
 

@@ -1,10 +1,10 @@
-class FloorMapsController < ApplicationController
+class FloorPointsController < ApplicationController
   before_action :set_floor_map, only: [:show, :edit, :update, :destroy]
-
+   respond_to :js,:html
   # GET /floor_maps
   # GET /floor_maps.json
   def index
-    @floor_maps = FloorMap.all
+    @floor_points = FloorPoint.all
   end
 
   def draw_canvas
@@ -20,7 +20,7 @@ class FloorMapsController < ApplicationController
 
   # GET /floor_maps/new
   def new
-    @floor_map = FloorMap.new
+    @floor_point = FloorPoint.new
   end
 
   # GET /floor_maps/1/edit
@@ -30,16 +30,13 @@ class FloorMapsController < ApplicationController
   # POST /floor_maps
   # POST /floor_maps.json
   def create
-    @floor_map = FloorMap.new(floor_map_params)
-
+    p "@@@@@@@@@@@@@"
+    p JSON.parse(params[:floor_point][:floor_coordinates])
+    @floor_point = FloorPoint.new(floor_map_params)
+    @floor_point.floor_coordinates = JSON.parse(params[:floor_point][:floor_coordinates])
+    @floor_point.save!
     respond_to do |format|
-      if @floor_map.save
-        format.html { redirect_to @floor_map, notice: 'Floor map was successfully created.' }
-        format.json { render :show, status: :created, location: @floor_map }
-      else
-        format.html { render :new }
-        format.json { render json: @floor_map.errors, status: :unprocessable_entity }
-      end
+      format.js
     end
   end
 
@@ -47,12 +44,12 @@ class FloorMapsController < ApplicationController
   # PATCH/PUT /floor_maps/1.json
   def update
     respond_to do |format|
-      if @floor_map.update(floor_map_params)
-        format.html { redirect_to @floor_map, notice: 'Floor map was successfully updated.' }
+      if @floor_point.update(floor_map_params)
+        format.html { redirect_to @floor_point, notice: 'Floor map was successfully updated.' }
         format.json { render :show, status: :ok, location: @floor_map }
       else
         format.html { render :edit }
-        format.json { render json: @floor_map.errors, status: :unprocessable_entity }
+        format.json { render json: @floor_point.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,7 +59,7 @@ class FloorMapsController < ApplicationController
   def destroy
     @floor_map.destroy
     respond_to do |format|
-      format.html { redirect_to floor_maps_url, notice: 'Floor map was successfully destroyed.' }
+      format.html { redirect_to @floor_point_url, notice: 'Floor map was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,11 +67,11 @@ class FloorMapsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_floor_map
-      @floor_map = FloorMap.find(params[:id])
+      @floor_map = FloorPoint.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def floor_map_params
-      params.require(:floor_map).permit(:name)
+      params.require(:floor_point).permit(:floor_coordinates)
     end
 end

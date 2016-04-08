@@ -1,8 +1,5 @@
 class User < ActiveRecord::Base
-#   require "point-in-polygon/Point"
-# require "point-in-polygon/Polygon"
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

@@ -1,6 +1,6 @@
 class Api::V1::ChecksController < Api::V1::BaseController
    
-
+caches :get_shortest_path
   def initialize_floor_map
       map_stored = [
       {:id =>"FLR1-BC1",:name =>"ENTRANCE",:xy=>"",:near_node_details=>[{:direction=>"EAST",:distance=>1.8,:near_point=>"FLR1-C2"},{:direction=>"WEST",:distance=>3,:near_point=>"FLR1-C3"}]},

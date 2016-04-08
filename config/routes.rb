@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  
+  resources :floor_points
   resources :floor_maps
   resources :beacons
   get 'home/index'
@@ -30,6 +31,8 @@ Rails.application.routes.draw do
   end
 
   get 'reception/patients_near_by' => 'reception#patients_near_by', as: :patients_near_by_entrance_reception
+  get 'draw_canvas' => 'floor_maps#draw_canvas'
+  get 'dummy_draw' => 'floor_maps#dummy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
