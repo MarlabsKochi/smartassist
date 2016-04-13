@@ -34,7 +34,7 @@ class FloorPointsController < ApplicationController
     p JSON.parse(params[:floor_point][:floor_coordinates])
     @floor_point = FloorPoint.new(floor_map_params)
     @floor_point.floor_coordinates = JSON.parse(params[:floor_point][:floor_coordinates])
-    @floor_point.save!
+    @status= @floor_point.save!
     respond_to do |format|
       format.js
     end

@@ -1,9 +1,10 @@
 <canvas id="drawCanvas" width="443" height="444">Canvas not working? :-/</canvas>
 <%= form_for(FloorPoint.new,url: floor_points_path,:id => 'POA_form' ,:remote =>true) do |f| %>
-<div id="labels_for_poa"><b>POA or Map points</b>
+<div id="labels_for_poa"><b>Map points with X,Y</b>
   <%= f.hidden_field :floor_coordinates%>
+ 
 </div>
-
+ <%= f.submit "Save Floor Points"%>
 <%end%>
 	<script>
 
@@ -93,10 +94,10 @@ function draw_access_point(str){
   var div = document.getElementById('labels_for_poa');
   div.style.display = 'block';
   
-  div.innerHTML = div.innerHTML + "<br>"+ poi_hash[startX+","+startY];
+  div.innerHTML = div.innerHTML + "<br>"+ poi_hash[startX+","+startY]+"&nbsp;"+"("+startX+","+startY+")";
 
 $('#floor_point_floor_coordinates').val(JSON.stringify(POI));
-$('#new_floor_point').submit();
+//$('#new_floor_point').submit();
 
 
   
