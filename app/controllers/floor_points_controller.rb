@@ -30,11 +30,9 @@ class FloorPointsController < ApplicationController
   # POST /floor_maps
   # POST /floor_maps.json
   def create
-    p "@@@@@@@@@@@@@"
-    p JSON.parse(params[:floor_point][:floor_coordinates])
     @floor_point = FloorPoint.new(floor_map_params)
-    @floor_point.floor_coordinates = JSON.parse(params[:floor_point][:floor_coordinates])
-    @status= @floor_point.save!
+    @floor_point.floor_coordinates = JSON.parse(params[:floor_point][:floor_coordinates]) if !params[:floor_point][:floor_coordinates].blank?
+    @status= @floor_point.save
     respond_to do |format|
       format.js
     end
