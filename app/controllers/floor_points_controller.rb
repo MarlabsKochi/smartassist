@@ -18,6 +18,9 @@ class FloorPointsController < ApplicationController
   def show
   end
 
+  def map_distance
+  end
+
   # GET /floor_maps/new
   def new
     @floor_point = FloorPoint.new
