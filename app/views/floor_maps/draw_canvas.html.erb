@@ -6,16 +6,14 @@
     </div>
     <%= f.submit "Save Co-ordinates", :class => 'btn btn-primary' , style: "margin-top:25px;"%>
   <%end%>
-  	<div id="map_distance">
 
-    </div>
   <script>
 
 
 
   var canvas = document.getElementById('drawCanvas');
   var ctx = canvas.getContext('2d');
-       
+  var i=0;   
   ctx.lineWidth = '3';
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
@@ -77,9 +75,6 @@
       dialog_enter_details();
      }
   });
-
-  	
-
   }
 
   function draw_access_point(str){
@@ -92,16 +87,11 @@
     poi_hash[startX+","+startY] = str;
     POI.push(poi_hash)
     console.log(POI); 
-
+    i= i+1;
     var div = document.getElementById('labels_for_poa');
     div.style.display = 'block';
     
-    div.innerHTML = div.innerHTML + "<br>"+ poi_hash[startX+","+startY]+"&nbsp;"+"("+startX+","+startY+")";
-
-
-
-
-
+    div.innerHTML = div.innerHTML + "<br>"+i+". &nbsp;"+ poi_hash[startX+","+startY]+"&nbsp;"+"("+startX+","+startY+")";
 
   $('#floor_point_floor_coordinates').val(JSON.stringify(POI));
     
@@ -109,10 +99,8 @@
 
 
   function dialog_enter_details()
-  {
-    
-    alertify.prompt("Enter Access Point Name", function (e, str) {
-     
+  {  
+    alertify.prompt("Enter Access Point Name", function (e, str) {  
       
       if (e) {
        if(str != "Default Value")
@@ -132,4 +120,32 @@
       ctx.drawImage(background,0,0);   
   }
 
+
+
+
+
+function getpos(e) 
+{
+    var totalOffsetX = 0;
+    var totalOffsetY = 0;
+    var canvasX = 0;
+    var canvasY = 0;
+    var currentElement = this;
+    var x;
+    var y;
+    if (e.pageX != undefined && e.pageY != undefined) 
+    {
+        x = e.pageX;
+        y = e.pageY;
+    }
+    else 
+    {
+        x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+        y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    }
+    x = x- canvas.offsetLeft;
+    y = y- canvas.offsetTop;
+    
+    return {x:x, y:y}
+}
   	</script>
