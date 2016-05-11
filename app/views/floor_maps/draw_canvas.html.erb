@@ -78,6 +78,8 @@
   }
 
   function draw_access_point(str){
+    alert(startX);
+    alert(startY);
     var poi_hash = {};
     ctx.beginPath();
     ctx.arc(startX, startY, 6, 0, Math.PI*2, true); 
@@ -148,4 +150,4 @@ function getpos(e)
     
     return {x:x, y:y}
 }
-  	</script>
+    </script>

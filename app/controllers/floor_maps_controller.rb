@@ -75,6 +75,6 @@ class FloorMapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def floor_map_params
-      params.require(:floor_map).permit(:name)
+      params.require(:floor_map).permit(:name,:length,:width)
     end
 end
