@@ -33,7 +33,7 @@ class Api::V1::ChecksController < Api::V1::BaseController
  {:id =>"FLR1-BC7",:name =>"Exit point",:x => 433,:y=>136,:beaconx=>415,:beacony=>97,:beacon_major=>8778,:floor_level=> "1",
   :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>6.2,:near_point=>"FLR1-C6"}]},
 ]
-hash["floor_map_url"] =  "http://192.168.63.68:8000#{FloorMap.find(8).name.url}"
+hash["floor_map_url"] =  ""
       render_json(hash) 
   end
 
