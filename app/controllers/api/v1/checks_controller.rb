@@ -3,34 +3,34 @@ class Api::V1::ChecksController < Api::V1::BaseController
 
 
   def initialize_floor_map
-  hash={}
+ hash={}
   hash["points"] = [
 
- {:id =>"FLR1-BC1",:name =>"Gift House/Entrance",:x => 6,:y=>17,:beaconx=>5,:beacony=>19,:beacon_major=>1001,:floor_level=> "1",:near_node_details=>
- [{:direction=>"NORTH EAST",:distance=>1.8,:near_point=>"FLR1-C2"},{:direction=>"SOUTH WEST",:distance=>3,:near_point=>"FLR1-C3"},{:direction=>"SOUTH EAST",:distance=>3,:near_point=>"FLR1-C9"}]},
+ {:id =>"FLR1-C1",:name =>"Gift House/Entrance",:x => 6,:y=>17,:beaconx=>5,:beacony=>19,:beacon_major=>1001,:floor_level=> "1",:near_node_details=>
+ [{:direction=>"NORTH EAST",:distance=>1.8,:near_point=>"FLR1-BC2"},{:direction=>"SOUTH WEST",:distance=>3,:near_point=>"FLR1-C3"},{:direction=>"SOUTH EAST",:distance=>3,:near_point=>"FLR1-C9"}]},
 
 
- {:id =>"FLR1-C3",:name =>"First turn",:x => 43,:y=>374,:beaconx=>1,:beacony=>1,:beacon_major=>13708,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>3,:near_point=>"FLR1-BC1"},{:direction=>"NORTH WEST",:distance=>3,:near_point=>"FLR1-C4"}]},
+ {:id =>"FLR1-BC3",:name =>"First turn",:x => 43,:y=>374,:beaconx=>18,:beacony=>394,:beacon_major=>13708,:floor_level=> "1",
+  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>4.8,:near_point=>"FLR1-C2"},{:direction=>"NORTH WEST",:distance=>6.8,:near_point=>"FLR1-BC5"}]},
 
 
  {:id =>"FLR1-C4",:name =>"Rest Room",:x => 2,:y=>12,:beaconx=>1,:beacony=>1,:beacon_major=>1001,:floor_level=> "1",
   :near_node_details=>[{:direction=>"NORTH WEST",:distance=>3.8,:near_point=>"FLR1-BC5"},{:direction=>"SOUTH EAST",:distance=>3,:near_point=>"FLR1-C3"}]},
 
- {:id =>"FLR1-BC5",:name =>"East Tower and Starbucks (level1)",:x => 43,:y=>136,:beaconx=>2,:beacony=>6,:beacon_major=>7088,:floor_level=> "1",
+ {:id =>"FLR1-BC5",:name =>"East Tower and Starbucks (level1)",:x => 43,:y=>136,:beaconx=>43,:beacony=>100,:beacon_major=>7088,:floor_level=> "1",
   :near_node_details=>[{:direction=>"NORTH EAST",:distance=>4.8,:near_point=>"FLR1-C6"},{:direction=>"SOUTH EAST",:distance=>3.8,:near_point=>"FLR1-C4"}]},
 
- {:id =>"FLR1-C2",:name =>"Admitting / Patients Check-in",:x => 216,:y=>374,:beaconx=>1,:beacony=>1,:beacon_major=>1001,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>6.2,:near_point=>"FLR1-BC8"},{:direction=>"SOUTH WEST",:distance=>1.8,:near_point=>"FLR1-BC1"},{:direction=>"NORTH WEST",:distance=>6.8,:near_point=>"FLR1-C6"}]},
+ {:id =>"FLR1-C2",:name =>"Admitting / Patients Check-in",:x => 216,:y=>374,:beaconx=>18,:beacony=>394,:beacon_major=>1001,:floor_level=> "1",
+  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>6.2,:near_point=>"FLR1-BC8"},{:direction=>"SOUTH WEST",:distance=>4.8,:near_point=>"FLR1-BC3"},{:direction=>"NORTH WEST",:distance=>6.8,:near_point=>"FLR1-C6"}]},
 
- {:id =>"FLR1-BC8",:name =>"Emergency Department",:x => 433,:y=>374,:beaconx=>20,:beacony=>18,:beacon_major=>23092,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>6.2,:near_point=>"FLR1-C2"}]},
+ {:id =>"FLR1-BC8",:name =>"Emergency Department",:x => 433,:y=>374,:beaconx=>408,:beacony=>404,:beacon_major=>23092,:floor_level=> "1",
+  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>6.2,:near_point=>"FLR1-BC2"}]},
 
 {:id =>"FLR1-C6",:name =>"Our Lady of Mercy Chapel",:x => 216,:y=>136,:beaconx=>19,:beacony=>6,:beacon_major=>1001,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>4.8,:near_point=>"FLR1-BC5"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-C2"},
+  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>4.8,:near_point=>"FLR1-BC5"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-BC2"},
     {:direction=>"NORTH EAST",:distance=>6.2,:near_point=>"FLR1-BC7"}]},
 
- {:id =>"FLR1-BC7",:name =>"Exit point",:x => 433,:y=>136,:beaconx=>19,:beacony=>6,:beacon_major=>8778,:floor_level=> "1",
+ {:id =>"FLR1-BC7",:name =>"Exit point",:x => 433,:y=>136,:beaconx=>415,:beacony=>97,:beacon_major=>8778,:floor_level=> "1",
   :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>6.2,:near_point=>"FLR1-C6"}]},
 ]
 hash["floor_map_url"] =  "http://192.168.63.68:8000#{FloorMap.find(8).name.url}"
@@ -53,6 +53,7 @@ hash["floor_map_url"] =  "http://192.168.63.68:8000#{FloorMap.find(8).name.url}"
       if start_point && end_point
         result = Dijkstra.new(start_point,end_point, paths_stored)
         response = {:path => result.shortest_path} if result
+        p response 
         render_json(response) if response
       end
     end
