@@ -39,10 +39,10 @@ hash["floor_map_url"] =  ""
 
 
   def get_shortest_path
-    paths_stored = [["FLR1-BC8", "FLR1-C2", 6.2],["FLR1-C2", "FLR1-BC8", 6.2],["FLR1-C2","FLR1-BC1",1.8],["FLR1-BC1","FLR1-C2",1.8],["FLR1-BC1","FLR1-C3",3],["FLR1-C3","FLR1-BC1",3],
-                    ["FLR1-C3", "FLR1-C4", 3],["FLR1-C4", "FLR1-C3", 3],["FLR1-C4", "FLR1-BC5", 3.8],["FLR1-BC5", "FLR1-C4", 3.8],
+    paths_stored = [["FLR1-BC8", "FLR1-C2", 6.2],["FLR1-C2", "FLR1-BC8", 6.2],["FLR1-C2","FLR1-BC3",4.8],["FLR1-BC3","FLR1-C2",4.8],
+                    ["FLR1-C3", "FLR1-BC5", 6.8],["FLR1-BC5", "FLR1-C3", 6.8],
                     ["FLR1-BC5", "FLR1-C6", 4.8],["FLR1-C6", "FLR1-BC5", 4.8],["FLR1-C6", "FLR1-BC7", 6.2],["FLR1-BC7", "FLR1-C6", 6.2],
-                    ["FLR1-C6", "FLR1-C2", 6.8],["FLR1-C2", "FLR1-C6", 6.8],["FLR1-BC1", "FLR1-C9", 3],["FLR1-C9", "FLR1-BC1", 3],["FLR1-C9", "FLR1-BC10", 5],["FLR1-BC10", "FLR1-C9", 5]               
+                    ["FLR1-C6", "FLR1-C2", 6.8],["FLR1-C2", "FLR1-C6", 6.8]            
       	           ] 
     paths_stored_for_floor0 = [["FLR0-BC1", "FLR0-C2", 3],["FLR0-C2", "FLR0-BC1", 3],["FLR0-BC3", "FLR0-C2", 5],["FLR0-C2", "FLR0-BC3", 5],
                               ["FLR0-BC3", "FLR0-C4", 10],["FLR0-C4", "FLR0-BC3", 10]]
