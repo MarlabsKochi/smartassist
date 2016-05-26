@@ -1,0 +1,105 @@
+<canvas id="drawCanvas" width="443" height="444">Canvas not working? :-/</canvas>
+
+  <script>
+
+
+
+
+var canvas = document.getElementById('drawCanvas');
+var ctx = canvas.getContext('2d');
+     
+ctx.lineWidth = '3';
+ctx.lineCap = 'round';
+ctx.lineJoin = 'round';
+
+var color = 'yellowgreen';
+var POI = [];
+canvas.addEventListener('mousedown', startDraw, false);
+canvas.addEventListener('mousemove', draw, false);
+canvas.addEventListener('mouseup', endDraw, false);
+
+function drawOnCanvas(color, plots) {
+  ctx.strokeStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(plots[0].x, plots[0].y);
+
+  for(var i=1; i<plots.length; i++) {
+    ctx.lineTo(plots[i].x, plots[i].y);
+  }
+  ctx.stroke();
+}
+
+
+var isActive = false;
+var plots = [];
+var startX,startY,endX,endY;
+
+function draw(e) {
+  if(!isActive) return;
+
+  var x = e.offsetX || e.layerX - canvas.offsetLeft;
+  var y = e.offsetY || e.layerY - canvas.offsetTop;
+
+  plots.push({x: x, y: y});
+  drawOnCanvas(color, plots);
+}
+    
+function startDraw(e) {
+  isActive = true;
+  startX = e.offsetX;
+  startY = e.offsetY;
+
+  var canvas = document.getElementById("drawCanvas");
+}
+    
+function endDraw(e) {
+  isActive = false;
+
+
+  plots = [];
+}
+
+function confirmation_for_access_point()
+{
+  alertify.confirm("Do You want o mark it as a access point", function (e) {
+  if (e) {
+    draw_access_point();
+   } else {
+        // user clicked "cancel"
+    }
+});
+
+  
+
+}
+
+function draw_access_point(){
+  var poi_hash = {};
+  ctx.beginPath();
+  ctx.arc(startX, startY, 3.5, 0, Math.PI*2, true); 
+  ctx.closePath();
+  ctx.fill();
+  alertify.prompt("Enter Access Point Name", function (e, str) {
+    poi_hash[startX+","+startY] = str;
+    POI.push(poi_hash)
+    console.log(POI); 
+    var div = document.getElementById('labels_for_poa');
+    div.innerHTML = div.innerHTML + "<br>"+poi_hash[startX+","+startY];
+    if (e) {
+        // user clicked "ok"
+    } else {
+        // user clicked "cancel"
+    }
+}, "Default Value");
+}
+
+
+var background = new Image();
+background.src = "http://s23.postimg.org/jhgzxhj8b/chi_map_level_1_png.png";
+
+
+background.onload = function(){
+    ctx.drawImage(background,0,0);   
+}
+
+  </script>

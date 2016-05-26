@@ -1,0 +1,43 @@
+
+<%= form_for @floor_map, :html => {:multipart => true, :class => 'form-horizontal' } do |f| %>
+  <% if @floor_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@floor_map.errors.count, "error") %> prohibited this floor_map from being saved:</h2>
+
+      <ul>
+      <% @floor_map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-group">
+    <%= f.label :length, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :length, :class => 'text_field form-control' %>
+    </div>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :width, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :width, :class => 'text_field form-control' %>
+    </div>
+  </div>
+</br>
+  <div class="form-group">
+    <%= f.label :name ,'Floor_image', :class => 'control-label col-md-2'%>
+      <div class="col-md-10">
+<%= f.file_field :name %>
+   </div>
+  </div>
+
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  beacons_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

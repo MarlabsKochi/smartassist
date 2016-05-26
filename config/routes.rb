@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  
+  resources :floor_points
+  resources :floor_maps
   resources :beacons
   get 'home/index'
 
@@ -20,10 +22,18 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create]
       resources :beacons, only: [] 
       get 'beacon_details' => 'beacons#beacon_details'
+      get 'paths' => 'paths#dummy'
+      get 'testing' => 'paths#dummys'
+      get 'get_shortest_path' => 'checks#get_shortest_path'
+      get 'initialize_floor_map' => 'checks#initialize_floor_map'
+      get 'find_nearest_node' => 'paths#find_nearest_node'
+      get 'floor_map_url' => 'checks#floor_image'
     end
   end
 
   get 'reception/patients_near_by' => 'reception#patients_near_by', as: :patients_near_by_entrance_reception
+  get 'draw_canvas' => 'floor_maps#draw_canvas'
+  get 'dummy_draw' => 'floor_maps#dummy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
