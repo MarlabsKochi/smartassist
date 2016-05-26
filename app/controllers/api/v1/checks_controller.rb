@@ -27,7 +27,7 @@ class Api::V1::ChecksController < Api::V1::BaseController
   :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>6.2,:near_point=>"FLR1-BC2"}]},
 
 {:id =>"FLR1-C6",:name =>"Our Lady of Mercy Chapel",:x => 216,:y=>136,:beaconx=>19,:beacony=>6,:beacon_major=>1001,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>4.8,:near_point=>"FLR1-BC5"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-BC2"},
+  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>4.8,:near_point=>"FLR1-BC5"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-C2"},
     {:direction=>"NORTH EAST",:distance=>6.2,:near_point=>"FLR1-BC7"}]},
 
  {:id =>"FLR1-BC7",:name =>"Exit point",:x => 433,:y=>136,:beaconx=>415,:beacony=>97,:beacon_major=>8778,:floor_level=> "1",
