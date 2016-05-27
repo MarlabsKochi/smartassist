@@ -6,16 +6,13 @@ class Api::V1::ChecksController < Api::V1::BaseController
  hash={}
   hash["points"] = [
 
- {:id =>"FLR1-C1",:name =>"Gift House/Entrance",:x => 6,:y=>17,:beaconx=>5,:beacony=>19,:beacon_major=>1001,:floor_level=> "1",:near_node_details=>
- [{:direction=>"NORTH EAST",:distance=>1.8,:near_point=>"FLR1-BC2"},{:direction=>"SOUTH WEST",:distance=>3,:near_point=>"FLR1-C3"},{:direction=>"SOUTH EAST",:distance=>3,:near_point=>"FLR1-C9"}]},
 
 
  {:id =>"FLR1-BC3",:name =>"First turn",:x => 43,:y=>374,:beaconx=>18,:beacony=>394,:beacon_major=>13708,:floor_level=> "1",
   :near_node_details=>[{:direction=>"NORTH EAST",:distance=>4.8,:near_point=>"FLR1-C2"},{:direction=>"NORTH WEST",:distance=>6.8,:near_point=>"FLR1-BC5"}]},
 
 
- {:id =>"FLR1-C4",:name =>"Rest Room",:x => 2,:y=>12,:beaconx=>1,:beacony=>1,:beacon_major=>1001,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"NORTH WEST",:distance=>3.8,:near_point=>"FLR1-BC5"},{:direction=>"SOUTH EAST",:distance=>3,:near_point=>"FLR1-C3"}]},
+ 
 
  {:id =>"FLR1-BC5",:name =>"East Tower and Starbucks (level1)",:x => 43,:y=>136,:beaconx=>43,:beacony=>100,:beacon_major=>7088,:floor_level=> "1",
   :near_node_details=>[{:direction=>"NORTH EAST",:distance=>4.8,:near_point=>"FLR1-C6"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-BC3"}]},
