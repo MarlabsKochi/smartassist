@@ -18,7 +18,7 @@ class Api::V1::ChecksController < Api::V1::BaseController
   :near_node_details=>[{:direction=>"NORTH WEST",:distance=>3.8,:near_point=>"FLR1-BC5"},{:direction=>"SOUTH EAST",:distance=>3,:near_point=>"FLR1-C3"}]},
 
  {:id =>"FLR1-BC5",:name =>"East Tower and Starbucks (level1)",:x => 43,:y=>136,:beaconx=>43,:beacony=>100,:beacon_major=>7088,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>4.8,:near_point=>"FLR1-C6"},{:direction=>"SOUTH EAST",:distance=>3.8,:near_point=>"FLR1-C4"}]},
+  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>4.8,:near_point=>"FLR1-C6"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-BC3"}]},
 
  {:id =>"FLR1-C2",:name =>"Admitting / Patients Check-in",:x => 216,:y=>374,:beaconx=>18,:beacony=>394,:beacon_major=>1001,:floor_level=> "1",
   :near_node_details=>[{:direction=>"NORTH EAST",:distance=>6.2,:near_point=>"FLR1-BC8"},{:direction=>"SOUTH WEST",:distance=>4.8,:near_point=>"FLR1-BC3"},{:direction=>"NORTH WEST",:distance=>6.8,:near_point=>"FLR1-C6"}]},
