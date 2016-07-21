@@ -37,6 +37,25 @@ hash["floor_map_url"] =  ""
       render_json(hash) 
   end
 
+  def initialize_floor_map_android
+    hash={}
+    hash["points"] = [{
+      :id =>"FLR1-BC5",:name =>"East Tower and Starbucks (level1)",:x => 43,:y=>136,:beaconx=>43,
+      :beacony=>100,:beacon_major=>7088,:floor_level=> "1",
+      :near_node_details=>[{:direction=>"NORTH EAST",:distance=>4.8,:near_point=>"FLR1-BC6"}]},
+      {:id =>"FLR1-BC2",:name =>"Admitting / Patients Check-in",:x => 216,:y=>374,:beaconx=>212,
+      :beacony=>402,:beacon_major=>13708,:floor_level=> "1",
+      :near_node_details=>[{:direction=>"NORTH WEST",:distance=>6.8,:near_point=>"FLR1-BC6"}]},
+
+      {:id =>"FLR1-BC6",:name =>"Our Lady of Mercy Chapel",:x => 216,:y=>136,:beaconx=>180,:beacony=>91,:beacon_major=>23092,:floor_level=> "1",
+      :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>4.8,:near_point=>"FLR1-BC5"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-BC2"},
+      {:direction=>"NORTH EAST",:distance=>6.2,:near_point=>"FLR1-BC7"}]},
+      {:id =>"FLR1-BC7",:name =>"Exit point",:x => 433,:y=>136,:beaconx=>415,:beacony=>97,:beacon_major=>6034,:floor_level=> "1",
+      :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>6.2,:near_point=>"FLR1-BC6"}]}]
+    hash["floor_map_url"] =  ""
+    render_json(hash) 
+  end
+
 
   def get_shortest_path
     paths_stored = [["FLR1-BC8", "FLR1-C2", 6.2],["FLR1-C2", "FLR1-BC8", 6.2],["FLR1-C2","FLR1-BC1",1.8],["FLR1-BC1","FLR1-C2",1.8],["FLR1-BC1","FLR1-C3",3],["FLR1-C3","FLR1-BC1",3],

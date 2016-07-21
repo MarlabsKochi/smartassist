@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get 'testing' => 'paths#dummys'
       get 'get_shortest_path' => 'checks#get_shortest_path'
       get 'initialize_floor_map' => 'checks#initialize_floor_map'
+      get 'initialize_floor_map_android' => 'checks#initialize_floor_map_android'
       get 'find_nearest_node' => 'paths#find_nearest_node'
       get 'floor_map_url' => 'checks#floor_image'
     end
