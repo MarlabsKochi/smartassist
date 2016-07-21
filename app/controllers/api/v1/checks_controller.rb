@@ -9,26 +9,19 @@ class Api::V1::ChecksController < Api::V1::BaseController
 
 
  {:id =>"FLR1-BC3",:name =>"First turn",:x => 43,:y=>374,:beaconx=>18,:beacony=>394,:beacon_major=>13708,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>4.8,:near_point=>"FLR1-C2"},{:direction=>"NORTH WEST",:distance=>6.8,:near_point=>"FLR1-BC5"}]},
+  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>11,:near_point=>"FLR1-BC8"},{:direction=>"NORTH WEST",:distance=>6.8,:near_point=>"FLR1-BC5"}]},
 
 
  
 
  {:id =>"FLR1-BC5",:name =>"East Tower and Starbucks (level1)",:x => 43,:y=>136,:beaconx=>43,:beacony=>100,:beacon_major=>7088,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>4.8,:near_point=>"FLR1-C6"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-BC3"}]},
-
- {:id =>"FLR1-C2",:name =>"Admitting / Patients Check-in",:x => 216,:y=>374,:beaconx=>18,:beacony=>394,:beacon_major=>1001,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>6.2,:near_point=>"FLR1-BC8"},{:direction=>"SOUTH WEST",:distance=>4.8,:near_point=>"FLR1-BC3"},{:direction=>"NORTH WEST",:distance=>6.8,:near_point=>"FLR1-C6"}]},
+  :near_node_details=>[{:direction=>"NORTH EAST",:distance=>11,:near_point=>"FLR1-BC7"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-BC3"}]},
 
  {:id =>"FLR1-BC8",:name =>"Emergency Department",:x => 433,:y=>374,:beaconx=>408,:beacony=>404,:beacon_major=>23092,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>6.2,:near_point=>"FLR1-C2"}]},
+  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>11,:near_point=>"FLR1-BC3"}]},
 
-{:id =>"FLR1-C6",:name =>"Our Lady of Mercy Chapel",:x => 216,:y=>136,:beaconx=>19,:beacony=>6,:beacon_major=>1001,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>4.8,:near_point=>"FLR1-BC5"},{:direction=>"SOUTH EAST",:distance=>6.8,:near_point=>"FLR1-C2"},
-    {:direction=>"NORTH EAST",:distance=>6.2,:near_point=>"FLR1-BC7"}]},
-
- {:id =>"FLR1-BC7",:name =>"Exit point",:x => 433,:y=>136,:beaconx=>415,:beacony=>97,:beacon_major=>8778,:floor_level=> "1",
-  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>6.2,:near_point=>"FLR1-C6"}]},
+ {:id =>"FLR1-BC7",:name =>"Exit point",:x => 433,:y=>136,:beaconx=>415,:beacony=>97,:beacon_major=>6034,:floor_level=> "1",
+  :near_node_details=>[{:direction=>"SOUTH WEST",:distance=>11,:near_point=>"FLR1-BC5"}]},
 ]
 hash["floor_map_url"] =  ""
       render_json(hash) 
